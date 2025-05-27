@@ -1,0 +1,46 @@
+<div th:fragment="uploadFragment(demande, types, documents, message)">
+  <h2 class="mb-4">Téléversement de documents</h2>
+
+  <form th:action="@{|/demandes/${demande.id}/upload|}" 
+        method="post" 
+        enctype="multipart/form-data" 
+        class="row g-3">
+        
+    <div class="col-md-4">
+      <label for="type" class="form-label">Type de document</label>
+      <select id="type" name="type" class="form-select" required>
+        <option th:each="t : ${types}" 
+                th:value="${t}" 
+                th:text="${t}"></option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="file" class="form-label">Fichier</label>
+      <input id="file" type="file" name="file" class="form-control" required>
+    </div>
+
+    <div class="col-md-2 align-self-end">
+      <button type="submit" class="btn btn-primary w-100">Téléverser</button>
+    </div>
+  </form>
+
+  <div class="mt-4" th:if="${message}">
+    <div class="alert alert-success" th:text="${message}"></div>
+  </div>
+
+  <!-- Liste des documents -->
+  <div class="mt-5">
+    <h4>Documents déjà envoyés :</h4>
+    <ul class="list-group" th:if="${documents != null}">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+          th:each="doc : ${documents}">
+        <span>
+          <strong th:text="${doc.type}">Type</strong> - 
+          <span th:text="${doc.filename}">Nom du fichier</span>
+        </span>
+        <small th:text="${#dates.format(doc.uploadedAt, 'dd/MM/yyyy HH:mm')}">Date</small>
+      </li>
+    </ul>
+  </div>
+</div>

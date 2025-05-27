@@ -1,0 +1,27 @@
+<!-- fragments/scripts.html -->
+<div th:fragment="scripts">
+    <!-- Right Sidebar -->
+    <div th:replace="fragments/right-sidebar :: right-sidebar"></div>
+
+    <!-- Vendor scripts -->
+    <script th:src="@{/assets/libs/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/libs/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/assets/libs/simplebar/simplebar.min.js}"></script>
+    <script th:src="@{/assets/libs/node-waves/waves.min.js}"></script>
+    <script th:src="@{/assets/libs/waypoints/lib/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/assets/libs/jquery.counterup/jquery.counterup.min.js}"></script>
+    <script th:src="@{/assets/libs/feather-icons/feather.min.js}"></script>
+
+    <!-- Knob plugin -->
+    <script th:src="@{/assets/libs/jquery-knob/jquery.knob.min.js}"></script>
+
+    <!-- Morris Chart -->
+    <script th:src="@{/assets/libs/morris.js06/morris.min.js}"></script>
+    <script th:src="@{/assets/libs/raphael/raphael.min.js}"></script>
+
+    <!-- Dashboard init js -->
+    <script th:src="@{/assets/js/pages/dashboard.init.js}"></script>
+
+    <!-- App js -->
+    <script th:src="@{/assets/js/app.min.js}"></script>
+</div>

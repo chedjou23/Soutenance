@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/title-meta :: title-meta (title='Dashboard')"></head>
+
+
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar -->
+        <div th:replace="fragments/topbar :: topbar (~{::pagetitle='Dashboard'})"></div>
+
+        <!-- Left Sidebar -->
+        <div th:replace="fragments/left-sidebar :: left-sidebar"></div>
+
+        <!-- Page content -->
+        <div class="content-page">
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Zone contenu dynamique -->
+                    <div th:replace="~{contentFragment}"></div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Scripts -->
+    <div th:replace="fragments/scripts :: scripts"></div>
+</body>
+
+</html>
