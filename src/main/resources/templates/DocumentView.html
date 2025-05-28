@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/title-meta :: title-meta (title='Dashboard')"></head>
+<head th:replace="~{fragments/title-meta :: title-meta (~{::title='Dashboard'})}"></head>
 
 
 <body>
@@ -9,10 +9,10 @@
     <div id="wrapper">
 
         <!-- Topbar -->
-        <div th:replace="fragments/topbar :: topbar (~{::pagetitle='Dashboard'})"></div>
+        <div th:replace="~{fragments/topbar :: topbar (~{::pagetitle='Dashboard'})}"></div>
 
         <!-- Left Sidebar -->
-        <div th:replace="fragments/left-sidebar :: left-sidebar"></div>
+        <div th:replace="~{fragments/left-sidebar :: left-sidebar}"></div>
 
         <!-- Page content -->
         <div class="content-page">
@@ -20,10 +20,8 @@
                 <div class="container-fluid">
 
                     <!-- Zone contenu dynamique -->
-                    <div th:replace="~{contentFragment}"></div>
-
-
-
+                    <div th:replace="~{fragments/admin_documents :: documents(${docs}, ${demande})}"></div>
+                    
 
                 </div>
             </div>
@@ -31,7 +29,7 @@
 
     </div>
     <!-- Scripts -->
-    <div th:replace="fragments/scripts :: scripts"></div>
+    <div th:replace="~{fragments/scripts :: scripts}"></div>
 </body>
 
 </html>

@@ -40,10 +40,8 @@ public class DemandeController {
       model.addAttribute("demande", demande);
       model.addAttribute("types", TypeDocument.values());
       model.addAttribute("documents", docRepo.findByDemandeId(id));
-      model.addAttribute("message", null);
-      model.addAttribute("contentFragment", "upload :: uploadFragment(demande, types, documents, message)");
 
-      return "dashboard";
+      return "uploadView";
   }
 
 

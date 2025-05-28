@@ -1,16 +1,13 @@
-<!-- templates/fragments/title-meta.html -->
-
-<head th:fragment="title-meta (title)">
+<th:block th:fragment="title-meta (title)">
     <meta charset="utf-8" />
     <title th:text="${title} + ' | Adminto - Responsive Admin Dashboard Template'">Adminto - Responsive Admin Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="A fully featured admin theme..." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- App favicon -->
     <link rel="shortcut icon" th:href="@{/assets/images/favicon.ico}" />
+
+    <link th:href="@{/assets/css/app.min.css}" rel="stylesheet" type="text/css" id="app-style" />
+    <link th:href="@{/assets/css/icons.min.css}" rel="stylesheet" type="text/css" />
+</th:block>
     
-    <!-- Ici tu peux inclure d'autres fragments CSS -->
-    <th:block th:replace="fragments/head-css :: head-css"/>
-  </head>
-  

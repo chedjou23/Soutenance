@@ -33,7 +33,7 @@ public class AdminController {
     List<DocumentClient> docs = docRepo.findByDemandeId(id);
     model.addAttribute("docs", docs);
     model.addAttribute("demande", Demande.builder().id(id).build());
-    return "admin_documents";
+    return "DocumentView";
   }
 
   @GetMapping("/documents/{docId}/download")

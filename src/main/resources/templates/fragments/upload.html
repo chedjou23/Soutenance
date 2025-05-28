@@ -1,4 +1,4 @@
-<div th:fragment="uploadFragment(demande, types, documents, message)">
+<div th:fragment="contentFragment(demande, types, documents, message)">
   <h2 class="mb-4">Téléversement de documents</h2>
 
   <form th:action="@{|/demandes/${demande.id}/upload|}" 
