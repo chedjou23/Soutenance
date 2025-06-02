@@ -34,7 +34,9 @@ public class DocumentClient {
   private TypeDocument type;
 
   private String filename;
+
   private String contentType;
+  
   private Instant uploadedAt;
 }
 

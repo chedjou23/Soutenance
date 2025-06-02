@@ -20,7 +20,7 @@ import stage.soutenance.projet.repositories.DocumentClientRepository;
 import stage.soutenance.projet.services.FileStorageService;
 
 @Controller
-@RequestMapping("/demandes")
+@RequestMapping("/clients")
 public class DemandeController {
   private final FileStorageService storage;
   private final DemandeRepository dr;
@@ -60,7 +60,7 @@ public class DemandeController {
       .uploadedAt(Instant.now())
       .build());
     ra.addFlashAttribute("message", "Fichier "+filename+" téléversé!");
-    return "redirect:/demandes/"+id+"/upload";
+    return "redirect:/clients/"+id+"/upload";
   }
 }
 

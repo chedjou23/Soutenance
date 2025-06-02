@@ -20,7 +20,9 @@ public class Demande {
   @Id 
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private Instant dateSoumission;
+
   private Statut statut; 
 }
 

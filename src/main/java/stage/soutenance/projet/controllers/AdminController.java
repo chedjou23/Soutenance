@@ -18,7 +18,7 @@ import stage.soutenance.projet.repositories.DocumentClientRepository;
 import stage.soutenance.projet.services.FileStorageService;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/gestionnaires")
 public class AdminController {
   private final DocumentClientRepository docRepo;
   private final FileStorageService storage;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Client</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h2 class="text-primary">Bienvenue dans votre espace client</h2>
+        <p class="text-muted">Vous pouvez ici déposer vos documents pour le traitement de votre demande.</p>
+    </div>
+
+    <div class="card shadow-sm p-4">
+        <form th:action="@{/clients/{id}/upload(id=${#authentication.name})}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="document" class="form-label">Choisir un document</label>
+                <input class="form-control" type="file" id="document" name="document" required>
+            </div>
+            <button class="btn btn-success">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
